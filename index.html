@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Full Screen Segments</title>
+<title>Rex And Abby Wedding Invitation</title>
 <style>
 html, body {
   height: 100%;
@@ -14,7 +14,7 @@ html, body {
   scrollbar-width: none;
   -ms-overflow-style: none;
   scroll-snap-type: y mandatory;
-  background: linear-gradient(180deg,#071024 0%, #071021 100%);
+  background: linear-gradient(180deg,#071024 0%, #5A86AD 100%);
 }
 body::-webkit-scrollbar { width: 0; }
 
@@ -29,11 +29,14 @@ body::-webkit-scrollbar { width: 0; }
   position: relative;
 }
 
+/* Photos */
 .photo {
   height: 100vh;
-  width: 100%;
-  object-fit: cover;
+  max-width: 920px;
+  width: auto;
+  object-fit: contain;
   display: block;
+  margin: 0 auto;
 }
 
 .container {
@@ -59,8 +62,8 @@ body::-webkit-scrollbar { width: 0; }
   bottom: 40px;
 }
 .time-part { text-align: center; min-width: 68px; }
-.time-part .num { font-weight: 700; font-size: 28px; line-height: 1; color: #7dd3fc; }
-.time-part .label { font-size: 12px; opacity: 0.7; margin-top: 4px; }
+.time-part .num { font-weight: 700; font-size: 28px; line-height: 1; color: #5A86AD; }
+.time-part .label { font-size: 12px; opacity: 0.7; margin-top: 4px; color: #5A86AD;}
 
 .title {
   font-size: 14px;
@@ -75,6 +78,9 @@ body::-webkit-scrollbar { width: 0; }
   width: 100%;
   height: 100%;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .carousel-track {
   display: flex;
@@ -84,21 +90,25 @@ body::-webkit-scrollbar { width: 0; }
 .slide {
   flex: 0 0 100%;
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+  height: 100vh;
+  max-width: 920px;
+  width: auto;
+  object-fit: contain;
 }
 
 /* Google Form */
 .form-container {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 .form-container iframe {
   width: 100%;
@@ -107,18 +117,24 @@ body::-webkit-scrollbar { width: 0; }
   border: none;
 }
 
+/* Mobile */
 @media (max-width: 768px) {
-  .photo, .slide img, .form-container iframe {
+  .photo, .slide img {
+    width: 100%;
+    height: 100vh;
+    object-fit: contain;
+  }
+  .form-container iframe {
+    max-width: 100%;
     width: 100%;
     height: 100%;
-    object-fit: cover;
   }
 }
 </style>
 </head>
 <body>
 
-<!-- Segment 1: Top Photo + Countdown -->
+<!-- Segment 1 -->
 <div class="segment" id="segment1">
   <div class="container">
     <img class="photo" src="resources/bg1.png" alt="Top photo">
@@ -144,7 +160,7 @@ body::-webkit-scrollbar { width: 0; }
   </div>
 </div>
 
-<!-- Segment 3-6: Photos -->
+<!-- Segments 3-6 -->
 <div class="segment"><img class="photo" src="resources/1.png" alt="Bottom photo"></div>
 <div class="segment"><img class="photo" src="resources/2.png" alt="Extra Photo 1"></div>
 <div class="segment"><img class="photo" src="resources/3.png" alt="Extra Photo 2"></div>
@@ -153,7 +169,9 @@ body::-webkit-scrollbar { width: 0; }
 <!-- Segment 7: Google Form -->
 <div class="segment" id="segment7">
   <div class="form-container">
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdeLmbM9A5oSqQ82275jKWdB_hIzOJ0er2KCnTuc7h7vT3ICw/viewform?embedded=true"></iframe>
+    <iframe 
+      src="https://docs.google.com/forms/d/e/1FAIpQLSdeLmbM9A5oSqQ82275jKWdB_hIzOJ0er2KCnTuc7h7vT3ICw/viewform?embedded=true">
+    </iframe>
   </div>
 </div>
 
